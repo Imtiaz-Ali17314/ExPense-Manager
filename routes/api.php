@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\BillController;
 use App\Http\Controllers\Api\ItemController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\VendorController;
@@ -31,4 +32,5 @@ Route::middleware('auth:sanctum')->group(function () {
     // Vendors & Items REST API Routes
     Route::apiResource('vendors', VendorController::class);
     Route::apiResource('items', ItemController::class);
+    Route::apiResource('bills', BillController::class);
 });
