@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\ItemController;
 use App\Http\Controllers\Api\ProfileController;
+use App\Http\Controllers\Api\VendorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +27,8 @@ Route::middleware('auth:sanctum')->group(function () {
     // Profile & Bank Details Routes
     Route::put('/profile', [ProfileController::class, 'update']);
     Route::put('/profile/password', [ProfileController::class, 'updatePassword']);
+
+    // Vendors & Items REST API Routes
+    Route::apiResource('vendors', VendorController::class);
+    Route::apiResource('items', ItemController::class);
 });
